@@ -11,6 +11,7 @@ namespace CricketGame
         public int PlayerScore { get; set; }
         public bool CanPlay { get; set; }
 
+        public int winner = 0;
         public Cricket()
         {
             CanPlay = true;
@@ -33,6 +34,22 @@ namespace CricketGame
          
         }
 
-        
+        public void playerAccess(bool p)
+        {
+            CanPlay = p;
+        }
+
+        public int CheckWinner(Cricket playerOne, Cricket playerTwo)
+        {
+            if(playerOne.PlayerScore>playerTwo.PlayerScore)
+            {
+                winner = 1;
+            }
+            else if(playerOne.PlayerScore < playerTwo.PlayerScore)
+            {
+                winner = 2;
+            }
+            return winner;
+        }
     }
 }

@@ -72,13 +72,13 @@ namespace CricketGame.specs
             this.ScenarioTearDown();
         }
         
-        [Xunit.FactAttribute(DisplayName="Cricket Game Has Started")]
+        [Xunit.FactAttribute(DisplayName="Cricket Game Has Started and PlayerOne wins")]
         [Xunit.TraitAttribute("FeatureTitle", "TwoPlayer")]
-        [Xunit.TraitAttribute("Description", "Cricket Game Has Started")]
+        [Xunit.TraitAttribute("Description", "Cricket Game Has Started and PlayerOne wins")]
         [Xunit.TraitAttribute("Category", "mytag")]
-        public virtual void CricketGameHasStarted()
+        public virtual void CricketGameHasStartedAndPlayerOneWins()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cricket Game Has Started", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cricket Game Has Started and PlayerOne wins", new string[] {
                         "mytag"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -87,13 +87,67 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("PlayerOne scores 5 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.Given("PlayerTwo scores 4 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("PlayerOne gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("PlayerOne gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("PlayerTwo is playing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("PlayerTwo gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("PlayerTwo scores 4 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("Declare the winner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("PlayerTwo gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("The winner is PlayerOne", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Cricket Game Has Started and PlayerTwo Wins")]
+        [Xunit.TraitAttribute("FeatureTitle", "TwoPlayer")]
+        [Xunit.TraitAttribute("Description", "Cricket Game Has Started and PlayerTwo Wins")]
+        public virtual void CricketGameHasStartedAndPlayerTwoWins()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cricket Game Has Started and PlayerTwo Wins", ((string[])(null)));
+#line 16
+this.ScenarioSetup(scenarioInfo);
+#line 17
+ testRunner.Given("PlayerOne is playing and PlayerTwo is not", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
+ testRunner.Given("PlayerOne scores 4 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+ testRunner.And("PlayerOne gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.And("PlayerTwo is playing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("PlayerTwo scores 5 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.When("PlayerTwo gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("The winner is PlayerTwo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute(DisplayName="Cricket Game Has Started and Its a tie")]
+        [Xunit.TraitAttribute("FeatureTitle", "TwoPlayer")]
+        [Xunit.TraitAttribute("Description", "Cricket Game Has Started and Its a tie")]
+        public virtual void CricketGameHasStartedAndItsATie()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cricket Game Has Started and Its a tie", ((string[])(null)));
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 26
+ testRunner.Given("PlayerOne is playing and PlayerTwo is not", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+ testRunner.Given("PlayerOne scores 5 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+ testRunner.And("PlayerOne gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And("PlayerTwo is playing", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("PlayerTwo scores 5 runs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.When("PlayerTwo gets out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.Then("Its Tie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
